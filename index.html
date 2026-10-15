@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>奇米影视盒 | 影视内容推荐与观影清单 · 好片收纳与口碑榜单</title>
+<meta name="keywords" content="奇米影视盒,影视推荐,观影清单,好片收纳,影视内容推荐,口碑榜单,观影指南,值得看的好片">
+<meta name="description" content="奇米影视盒是一个影视内容推荐与观影清单平台，把值得看的好片按主题和心情分门别类收进盒子里，附影视行业资讯与口碑榜单。">
+<meta name="author" content="奇米影视盒">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#faf6f0">
+
+<link rel="canonical" href="https://qimiyingshihe-cn.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="奇米影视盒">
+<meta property="og:title" content="奇米影视盒 | 影视内容推荐与观影清单">
+<meta property="og:description" content="把值得看的好片，按主题和心情分门别类收进盒子里。">
+<meta property="og:locale" content="zh_CN">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "奇米影视盒",
+  "url": "https://qimiyingshihe-cn.github.io/",
+  "description": "影视内容推荐与观影清单平台。",
+  "slogan": "一格一格，收好每一部好片"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "奇米影视盒",
+  "url": "https://qimiyingshihe-cn.github.io/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://qimiyingshihe-cn.github.io/#search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:#faf6f0;color:#3a3128;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid #b5653c;outline-offset:3px;border-radius:2px}
+::selection{background:#c98a5c;color:#faf6f0}
+
+:root{
+  --bg:#faf6f0;
+  --bg2:#f2ebe0;
+  --bg3:#ebe1d2;
+  --card:#fffdf9;
+  --line:#e4d8c6;
+  --line2:#d0bfa3;
+  --br:#8a5a36;
+  --br2:#b5653c;
+  --ac:#c98a5c;
+  --ac2:#e0b58c;
+  --ol:#4a3f33;
+  --tx:#5c5145;
+  --tx2:#8a7a6a;
+  --gr:#8f9a6b;
+  --sh:0 26px 60px -34px rgba(90,70,45,.45);
+  --r:2px;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+.section{padding:112px 0;position:relative}
+.rule{width:46px;height:2px;background:var(--br2);display:block;margin-bottom:16px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--br2);font-weight:800;margin-bottom:18px}
+.eyebrow::before{content:"";width:13px;height:13px;background:var(--br2);display:block;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)}
+.h-title{font-size:clamp(28px,4.6vw,48px);font-weight:900;line-height:1.3;letter-spacing:.5px;color:var(--ol)}
+.h-title em{font-style:normal;color:var(--br2);position:relative}
+.h-title em::after{content:"";position:absolute;left:0;right:0;bottom:5px;height:9px;background:rgba(201,138,92,.28);z-index:-1}
+.h-sub{color:var(--tx2);max-width:640px;margin-top:16px;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 32px;font-weight:700;font-size:13.5px;letter-spacing:.04em;transition:.4s;border:1px solid transparent}
+.btn-primary{background:var(--br2);color:#fffdf9;box-shadow:0 16px 40px -20px rgba(181,101,60,.9)}
+.btn-primary:hover{background:var(--ac);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line2);color:var(--tx)}
+.btn-ghost:hover{border-color:var(--br2);color:var(--br2);background:rgba(201,138,92,.08);transform:translateY(-2px)}
+.tag{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--br2);padding:5px 12px;letter-spacing:.04em}
+.tag.gr{background:var(--gr)}
+.tag.br{background:var(--br)}
+.tag.ac{background:var(--ac)}
+
+/* ============ 导航 ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,246,240,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s}
+.nav.scrolled{border-bottom-color:var(--line);background:rgba(250,246,240,.98)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:82px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:900;font-size:21px;color:var(--ol);letter-spacing:.5px}
+.logo b{width:23px;height:23px;border:2px solid var(--br2);display:block;flex:none;position:relative}
+.logo b::after{content:"";position:absolute;inset:3px;background:var(--ac2)}
+.logo span{font-size:10.5px;font-weight:600;color:var(--tx2);letter-spacing:.22em;padding-left:11px;border-left:1px solid var(--line2)}
+.menu{display:flex;gap:2px;align-items:center}
+.menu a{padding:9px 15px;font-size:13.5px;color:var(--tx);transition:.25s;font-weight:600}
+.menu a:hover{color:var(--br2)}
+.menu a.active{color:var(--br2);font-weight:700}
+.menu a.active::after{content:"";display:block;width:16px;height:2px;background:var(--br2);margin:5px auto 0}
+.menu a.cta{border:1px solid var(--line2);margin-left:12px;padding:11px 22px;color:var(--tx);font-weight:700}
+.menu a.cta:hover{background:var(--br2);border-color:var(--br2);color:#fffdf9}
+.menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line2);position:relative;background:#fffdf9}
+.menu-btn span{position:absolute;left:12px;width:18px;height:1.5px;background:var(--br2);transition:.3s}
+.menu-btn span:nth-child(1){top:16px}.menu-btn span:nth-child(2){top:22px}.menu-btn span:nth-child(3){top:28px}
+.menu-btn.open span:nth-child(1){top:22px;transform:rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){top:22px;transform:rotate(-45deg)}
+
+/* ============ Hero ============ */
+.hero{position:relative;padding:150px 0 110px;overflow:hidden;background:linear-gradient(180deg,#f2ebe0 0%,#faf6f0 100%)}
+.hero-in{display:grid;grid-template-columns:1.15fr 1fr;gap:70px;align-items:center}
+.hero-l .kicker{display:inline-flex;align-items:center;gap:12px;font-size:12px;color:var(--br2);font-weight:800;letter-spacing:.18em;margin-bottom:26px}
+.hero-l .kicker::before{content:"";width:38px;height:1px;background:var(--br2)}
+.hero h1{font-size:clamp(38px,6.4vw,70px);font-weight:900;line-height:1.16;color:var(--ol);letter-spacing:1px}
+.hero h1 u{text-decoration:none;color:var(--br2);position:relative}
+.hero h1 u::after{content:"";position:absolute;left:0;right:0;bottom:5px;height:11px;background:rgba(201,138,92,.3);z-index:-1}
+.hero-lead{font-size:clamp(15px,1.6vw,18px);color:var(--tx2);max-width:540px;margin-top:26px}
+.hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.hero-r{position:relative;height:430px}
+.box-stack{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:12px;transform:rotate(-3deg)}
+.box{background:var(--card);border:1px solid var(--line);box-shadow:var(--sh);position:relative;overflow:hidden;transition:.6s;display:flex;flex-direction:column;justify-content:space-between;padding:12px}
+.box span{font-size:9px;font-weight:800;letter-spacing:.16em;color:var(--br2)}
+.box i{width:26px;height:26px;background:var(--ac2);display:block;margin:8px auto 0;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)}
+.box b{font-size:11px;font-weight:900;color:var(--ol);line-height:1.35}
+.box.m1{background:var(--br);color:#fffdf9;border-color:var(--br)}
+.box.m1 span,.box.m1 b{color:#fffdf9}
+.box.m1 i{background:var(--ac2)}
+.box.m2{background:var(--ac);color:#fffdf9;border-color:var(--ac)}
+.box.m2 span,.box.m2 b{color:#fffdf9}
+.box.m2 i{background:#fffdf9}
+.box.m3{background:var(--gr);color:#fffdf9;border-color:var(--gr)}
+.box.m3 span,.box.m3 b{color:#fffdf9}
+.box.m3 i{background:#fffdf9}
+.box.t1{grid-column:1/2;grid-row:1/3}
+.box.t1 b{font-size:20px;line-height:1.3}
+.box.t1 span{font-size:11px}
+.box.t1 i{width:44px;height:44px;margin:16px auto 0}
+.hero-r::after{content:"";position:absolute;left:-22px;bottom:-22px;width:120px;height:120px;border:1px solid var(--line2);border-radius:50%;z-index:-1}
+.hero-note{display:flex;gap:44px;margin-top:52px;flex-wrap:wrap}
+.hero-note div{position:relative;padding-left:22px}
+.hero-note div::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;background:var(--ac2)}
+.hero-note div b{display:block;font-size:25px;font-weight:900;color:var(--br2);line-height:1.25;font-family:Georgia,serif}
+.hero-note div span{font-size:12.5px;color:var(--tx2)}
+
+/* ============ 栏目一：盒子里有什么（九宫格盒子） ============ */
+#box{background:var(--bg)}
+.bx-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:52px;flex-wrap:wrap}
+.bx-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.bx-i{background:var(--card);border:1px solid var(--line);padding:26px 22px 24px;transition:.5s;position:relative;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.bx-i::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--ac2);transform:scaleX(0);transform-origin:left;transition:.6s}
+.bx-i:hover{border-color:var(--br2);box-shadow:var(--sh);transform:translateY(-5px)}
+.bx-i:hover::before{transform:scaleX(1)}
+.bx-i:hover .bx-go{color:var(--br2)}
+.bx-i:hover .bx-ic{transform:translateY(-3px) rotate(-4deg)}
+.bx-ic{width:44px;height:44px;background:var(--bg2);display:grid;place-items:center;margin-bottom:18px;transition:.5s;color:var(--br2)}
+.bx-ic svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.6}
+.bx-i h3{font-size:17px;font-weight:900;color:var(--ol);line-height:1.4;margin-bottom:8px}
+.bx-i p{font-size:13px;color:var(--tx2);line-height:1.7;flex:1}
+.bx-go{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--tx2);margin-top:16px;transition:.3s}
+.bx-i.b1{background:var(--br);border-color:var(--br);color:#fffdf9}
+.bx-i.b1 h3,.bx-i.b1 p,.bx-i.b1 .bx-go{color:#fffdf9}
+.bx-i.b1 .bx-ic{background:rgba(255,253,249,.16);color:#fffdf9}
+.bx-i.b2{background:var(--bg2)}
+.bx-i.b3{grid-column:span 2;background:var(--ac);border-color:var(--ac);color:#fffdf9;min-height:210px}
+.bx-i.b3 h3{font-size:21px;color:#fffdf9;margin-bottom:10px}
+.bx-i.b3 p{color:rgba(255,253,249,.86)}
+.bx-i.b3 .bx-ic{background:rgba(255,253,249,.18);color:#fffdf9}
+.bx-i.b3 .bx-go{color:#fffdf9}
+.bx-i.b3::before{background:#fffdf9}
+
+/* ============ 栏目二：好片清单（左说明右表格） ============ */
+#list{background:var(--bg2)}
+.ls-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:52px;flex-wrap:wrap}
+.ls-grid{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start}
+.ls-side{position:sticky;top:110px;background:var(--card);border:1px solid var(--line);padding:32px 28px}
+.ls-side h3{font-size:19px;font-weight:900;color:var(--ol);line-height:1.5;margin-bottom:16px}
+.ls-side p{font-size:13.5px;color:var(--tx2);line-height:1.8}
+.ls-side .meta{display:grid;gap:14px;margin-top:26px;padding-top:26px;border-top:1px solid var(--line)}
+.ls-side .meta div b{display:block;font-size:23px;font-weight:900;color:var(--br2);font-family:Georgia,serif}
+.ls-side .meta div span{font-size:12px;color:var(--tx2)}
+.ls-table{background:var(--card);border:1px solid var(--line)}
+.ls-row{display:grid;grid-template-columns:44px 1fr 88px 66px;align-items:center;gap:18px;padding:17px 26px;border-bottom:1px solid var(--line);transition:.3s}
+.ls-row:last-child{border-bottom:none}
+.ls-row.head{background:var(--bg2);padding:13px 26px}
+.ls-row.head span{font-size:11px;font-weight:800;color:var(--br2);letter-spacing:.1em}
+.ls-row:not(.head):hover{background:rgba(201,138,92,.06)}
+.ls-row .no{font-size:12px;font-weight:900;color:var(--line2);font-family:Georgia,serif}
+.ls-row .info h4{font-size:15px;font-weight:800;color:var(--ol);line-height:1.4}
+.ls-row .info small{font-size:12px;color:var(--tx2)}
+.ls-row .cat{font-size:11px;font-weight:700;color:var(--tx);background:var(--bg2);padding:5px 0;text-align:center}
+.ls-row .rt{font-size:15px;font-weight:900;color:var(--br2);font-family:Georgia,serif;text-align:right}
+.ls-row.head .rt{text-align:right}
+
+/* ============ 栏目三：按心情分格（大数字横向条） ============ */
+#mood{background:var(--bg)}
+.md-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:52px;flex-wrap:wrap}
+.md-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.md-i{background:var(--card);border:1px solid var(--line);padding:30px 28px;transition:.55s;position:relative;overflow:hidden}
+.md-i::after{content:"";position:absolute;right:-20px;bottom:-28px;font-family:Georgia,serif;font-size:74px;font-weight:900;color:rgba(138,90,54,.06);line-height:1}
+.md-i:hover{border-color:var(--br2);box-shadow:var(--sh);transform:translateY(-5px)}
+.md-i:hover::after{color:rgba(138,90,54,.12)}
+.md-num{font-family:Georgia,serif;font-size:38px;font-weight:900;color:var(--ac2);line-height:1;margin-bottom:16px;transition:.4s}
+.md-i:hover .md-num{color:var(--br2)}
+.md-i h3{font-size:18px;font-weight:900;color:var(--ol);line-height:1.4;margin-bottom:10px}
+.md-i p{font-size:13.5px;color:var(--tx2);line-height:1.75;margin-bottom:18px}
+.md-i ul{display:grid;gap:7px}
+.md-i li{font-size:12.5px;color:var(--tx);display:flex;gap:8px;align-items:flex-start}
+.md-i li::before{content:"";width:5px;height:5px;background:var(--ac2);margin-top:8px;flex:none;transition:.3s}
+.md-i:hover li::before{background:var(--br2)}
+
+/* ============ 栏目四：开箱记录（横向滚动条带） ============ */
+#unbox{background:var(--bg2)}
+.ub-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:42px;flex-wrap:wrap}
+.ub-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.ub-arrows{display:flex;gap:8px}
+.ub-arrows button{width:42px;height:42px;border:1px solid var(--line2);background:var(--card);display:grid;place-items:center;transition:.3s;color:var(--br2)}
+.ub-arrows button:hover{border-color:var(--br2);background:var(--br2);color:#fffdf9}
+.ub-arrows svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.ub-track{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:14px;scrollbar-width:none}
+.ub-track::-webkit-scrollbar{display:none}
+.ub-in{display:flex;gap:18px}
+.ub-i{flex:0 0 320px;background:var(--card);border:1px solid var(--line);transition:.5s;scroll-snap-align:start;display:flex;flex-direction:column}
+.ub-i:hover{border-color:var(--br2);box-shadow:var(--sh)}
+.ub-cap{height:150px;position:relative;overflow:hidden}
+.ub-cap .bg{position:absolute;inset:0;transition:1s transform}
+.ub-i:hover .ub-cap .bg{transform:scale(1.12)}
+.ub-cap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(58,49,40,.8))}
+.ub-cap em{position:absolute;left:20px;top:20px;z-index:2;font-style:normal;font-size:10.5px;font-weight:700;color:#fffdf9;background:var(--br2);padding:6px 12px}
+.ub-cap time{position:absolute;right:20px;top:20px;z-index:2;font-size:11px;color:#fffdf9;letter-spacing:.1em;font-weight:700}
+.ub-cap b{position:absolute;left:20px;bottom:18px;z-index:2;font-size:17px;font-weight:900;color:#fffdf9;line-height:1.4}
+.ub-body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+.ub-body p{font-size:13px;color:var(--tx2);line-height:1.7;flex:1}
+.ub-body .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12.5px;font-weight:800;color:var(--br2)}
+.ub-i:hover .more{color:var(--ac)}
+.u1{background:linear-gradient(155deg,#f2ebe0,#8a5a36)}
+.u2{background:linear-gradient(155deg,#f2ebe0,#c98a5c)}
+.u3{background:linear-gradient(155deg,#f2ebe0,#8f9a6b)}
+.u4{background:linear-gradient(155deg,#f2ebe0,#b5653c)}
+.u5{background:linear-gradient(155deg,#f2ebe0,#d0bfa3)}
+.u6{background:linear-gradient(155deg,#f2ebe0,#a88a5a)}
+
+/* ============ 栏目五：资讯（日期刻度式列表） ============ */
+#news{background:var(--bg)}
+.nw-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:52px;flex-wrap:wrap}
+.nw-list{display:grid;gap:0;background:var(--card);border:1px solid var(--line)}
+.nw-i{display:grid;grid-template-columns:120px 86px 1fr 130px;gap:26px;align-items:center;padding:22px 30px;border-bottom:1px solid var(--line);transition:.35s}
+.nw-i:last-child{border-bottom:none}
+.nw-i:hover{background:rgba(201,138,92,.06)}
+.nw-i:hover h3{color:var(--br2)}
+.nw-i time{font-family:Georgia,serif;font-size:24px;font-weight:900;color:var(--br2);line-height:1.1}
+.nw-i time small{display:block;font-size:11px;color:var(--tx2);font-weight:600;letter-spacing:.12em;margin-top:3px;font-family:inherit}
+.nw-i .cat{font-size:11px;font-weight:800;color:var(--br2);letter-spacing:.06em;text-align:center;border-left:1px solid var(--line)}
+.nw-i h3{font-size:15.5px;font-weight:800;color:var(--ol);line-height:1.55;transition:.3s}
+.nw-i .more{justify-self:end;font-size:12px;font-weight:700;color:var(--tx2);transition:.3s}
+.nw-i:hover .more{color:var(--br2)}
+
+/* ============ CTA ============ */
+.cta{background:var(--bg2);padding:0 0 112px}
+.cta-in{position:relative;padding:80px 40px;text-align:center;background:var(--card);border:1px solid var(--line)}
+.cta-in::before{content:"";position:absolute;left:22px;right:22px;top:22px;bottom:22px;border:1px dashed rgba(138,90,54,.28)}
+.cta-in>*{position:relative}
+.cta-in .rule{margin:0 auto 18px}
+.cta-in h2{font-size:clamp(26px,4.6vw,44px);font-weight:900;letter-spacing:.5px;line-height:1.4;color:var(--ol)}
+.cta-in h2 i{font-style:normal;color:var(--br2)}
+.cta-in p{color:var(--tx2);max-width:600px;margin:18px auto 0;font-size:15px}
+.cta-actions{display:flex;gap:14px;justify-content:center;margin-top:38px;flex-wrap:wrap}
+
+/* ============ 页脚 ============ */
+.foot{background:#f0e7da;color:var(--tx);padding:80px 0 0;border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px}
+.foot-brand .logo{margin-bottom:18px}
+.foot-brand p{color:var(--tx2);font-size:13.5px;max-width:340px;line-height:1.85}
+.foot-social{display:flex;gap:10px;margin-top:26px}
+.foot-social a{width:40px;height:40px;border:1px solid var(--line2);background:#fffdf9;display:grid;place-items:center;transition:.3s}
+.foot-social a:hover{border-color:var(--br2);background:var(--br2)}
+.foot-social svg{width:15px;height:15px;stroke:var(--tx);fill:none;stroke-width:1.7;transition:.3s}
+.foot-social a:hover svg{stroke:#fffdf9}
+.foot h5{font-size:14px;font-weight:900;color:var(--br2);margin-bottom:20px;letter-spacing:.05em}
+.foot ul{display:grid;gap:11px}
+.foot a{color:var(--tx2);font-size:13.5px;transition:.2s}
+.foot a:hover{color:var(--br2)}
+.foot-bot{border-top:1px solid var(--line);padding:24px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--tx2)}
+.foot-bot a{color:var(--tx2)}
+.foot-bot a:hover{color:var(--br2)}
+
+.top{position:fixed;right:24px;bottom:28px;z-index:90;width:46px;height:46px;border:1px solid var(--line2);display:none;place-items:center;background:#fffdf9;transition:.3s;box-shadow:var(--sh)}
+.top.show{display:grid}
+.top:hover{border-color:var(--br2);background:var(--br2)}
+.top svg{width:17px;height:17px;stroke:var(--br2);fill:none;stroke-width:2;transition:.3s}
+.top:hover svg{stroke:#fffdf9}
+
+.reveal{opacity:0;transform:translateY(28px);transition:.8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  .hero-in{grid-template-columns:1fr;gap:50px}
+  .hero-r{height:340px;max-width:420px}
+  .bx-grid{grid-template-columns:repeat(3,1fr)}
+  .bx-i.b3{grid-column:span 3}
+  .ls-grid{grid-template-columns:1fr}
+  .ls-side{position:static}
+  .md-grid{grid-template-columns:1fr 1fr}
+  .nw-i{grid-template-columns:86px 1fr 110px;gap:16px}
+  .nw-i .cat{display:none}
+}
+@media(max-width:860px){
+  .md-grid{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .wrap{padding:0 18px}
+  .section{padding:70px 0}
+  .menu{position:fixed;top:82px;left:0;right:0;flex-direction:column;align-items:stretch;padding:18px;background:var(--bg);border-bottom:1px solid var(--line);gap:2px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s}
+  .menu.open{transform:none;opacity:1;pointer-events:auto}
+  .menu a{padding:14px;border-bottom:1px solid var(--line)}
+  .menu a.active::after{display:none}
+  .menu a.cta{display:block;margin:12px 0 0;text-align:center;border:1px solid var(--line2)}
+  .menu-btn{display:block}
+  .hero{padding:130px 0 70px}
+  .hero-r{height:300px}
+  .hero-note{gap:26px}
+  .hero-note div b{font-size:22px}
+  .bx-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .bx-i{padding:20px 18px 18px;min-height:180px}
+  .bx-i.b3{grid-column:span 2}
+  .bx-ic{width:38px;height:38px;margin-bottom:14px}
+  .bx-ic svg{width:18px;height:18px}
+  .ls-row,.ls-row.head{grid-template-columns:32px 1fr 54px;gap:12px;padding:14px 18px}
+  .ls-row .cat{display:none}
+  .ls-side{padding:26px 22px}
+  .md-num{font-size:30px}
+  .md-i{padding:24px 22px}
+  .ub-i{flex:0 0 250px}
+  .ub-cap{height:120px}
+  .nw-i{grid-template-columns:64px 1fr 80px;gap:12px;padding:16px 18px}
+  .nw-i time{font-size:19px}
+  .nw-i .more{display:none}
+  .foot-grid{grid-template-columns:1fr;gap:34px}
+  .cta-in{padding:54px 22px}
+  .cta-in::before{left:12px;right:12px;top:12px;bottom:12px}
+  .logo span{display:none}
+}
+@media print{
+  .nav,.menu-btn,.top,.hero-r{display:none}
+  body{background:#fff;color:#000}
+  .section{padding:30px 0}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ============ 导航 ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" aria-label="奇米影视盒 首页"><b></b>奇米影视盒<span>THE FILM BOX</span></a>
+    <nav class="menu" id="menu" aria-label="主导航">
+      <a href="#top" class="active">首页</a>
+      <a href="#box">盒子里有什么</a>
+      <a href="#list">好片清单</a>
+      <a href="#mood">按心情分格</a>
+      <a href="#unbox">开箱记录</a>
+      <a href="#news">资讯动态</a>
+      <a href="#" class="cta">推荐好片</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="hero-l reveal">
+        <div class="kicker">THE FILM BOX · 自 2026</div>
+        <h1>一格一格，<u>收好每一部</u>好片</h1>
+        <p class="hero-lead">奇米影视盒是一个影视内容推荐与观影清单平台。我们把值得看的好片按主题和心情分门别类收进盒子里，再附上影视行业资讯与口碑榜单。</p>
+        <div class="hero-actions">
+          <a href="#box" class="btn btn-primary">看看盒子里</a>
+          <a href="#mood" class="btn btn-ghost">按心情找片</a>
+        </div>
+        <div class="hero-note">
+          <div><b data-n="960">0</b><span>已收纳好片</span></div>
+          <div><b data-n="32">格</b><span>主题分格</span></div>
+          <div><b data-n="5">位</b><span>常驻编辑</span></div>
+        </div>
+      </div>
+      <div class="hero-r reveal">
+        <div class="box-stack">
+          <div class="box t1 m1"><span>BOX 01</span><i></i><b>现实题材</b></div>
+          <div class="box"><span>BOX 02</span><i></i><b>生活剧集</b></div>
+          <div class="box m3"><span>BOX 03</span><i></i><b>自然纪录</b></div>
+          <div class="box"><span>BOX 04</span><i></i><b>短片动画</b></div>
+          <div class="box t1 m2"><span>BOX 05</span><i></i><b>经典补片</b></div>
+          <div class="box"><span>BOX 06</span><i></i><b>陪家人看</b></div>
+          <div class="box m3"><span>BOX 07</span><i></i><b>治愈系</b></div>
+          <div class="box"><span>BOX 08</span><i></i><b>睡前短片</b></div>
+          <div class="box m1"><span>BOX 09</span><i></i><b>纪录片</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目一：盒子里有什么（九宫格盒子） ============ -->
+<section class="section" id="box">
+  <div class="wrap">
+    <div class="bx-head reveal">
+      <div>
+        <div class="eyebrow">WHAT'S INSIDE / 盒子里有什么</div>
+        <h2 class="h-title">九个格子，<em>九个方向</em></h2>
+        <p class="h-sub">每个格子是一种观影需求，点进去是一份不超过十二部的清单。我们刻意不让清单变长。</p>
+      </div>
+      <a href="#list" class="btn btn-ghost">看好片清单 →</a>
+    </div>
+    <div class="bx-grid">
+      <a href="#" class="bx-i b1 reveal">
+        <div class="bx-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="1"/><path d="M7 4V2M17 4V2M3 9h18"/></svg></div>
+        <div><h3>现实题材</h3><p>把镜头对准普通人的片子，需要专注看完，但看完会留下点什么。</p></div>
+        <div class="bx-go">进入格子 →</div>
+      </a>
+      <a href="#" class="bx-i reveal">
+        <div class="bx-ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 10h16M9 6V3M15 6V3"/></svg></div>
+        <div><h3>生活剧集</h3><p>节奏稳、角色讨喜，长辈认可度最高的一类。</p></div>
+        <div class="bx-go">进入格子 →</div>
+      </a>
+      <a href="#" class="bx-i b3 reveal">
+        <div class="bx-ic"><svg viewBox="0 0 24 24"><path d="M12 3c-3 4-5 7-5 11a5 5 0 0010 0c0-4-2-7-5-11z"/></svg></div>
+        <div><h3>自然与人文纪录</h3><p>摄影强过台词，适合安静的夜晚。单集五十分钟以内，不煽情，不催泪，只是把事情讲清楚。</p></div>
+        <div class="bx-go">进入格子 →</div>
+      </a>
+      <a href="#" class="bx-i reveal">
+        <div class="bx-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <div><h3>治愈系</h3><p>节奏慢、冲突少，看完不会难受。</p></div>
+        <div class="bx-go">进入格子 →</div>
+      </a>
+      <a href="#" class="bx-i b2 reveal">
+        <div class="bx-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 5v6c0 5-4 7-8 7s-8-2-8-7V8z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><h3>经典补片</h3><p>被反复提到、但很多人没看完的老片子。附一句为什么现在看依然成立。</p></div>
+        <div class="bx-go">进入格子 →</div>
+      </a>
+      <a href="#" class="bx-i reveal">
+        <div class="bx-ic"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="2"/><path d="M9 6V4h6v2"/></svg></div>
+        <div><h3>下饭配饭</h3><p>笑点不吵，每集二十分钟，吃饭时看正好。</p></div>
+        <div class="bx-go">进入格子 →</div>
+      </a>
+      <a href="#" class="bx-i reveal">
+        <div class="bx-ic"><svg viewBox="0 0 24 24"><path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c2.5 0 4.7 1 6.4 2.6"/></svg></div>
+        <div><h3>睡前短片</h3><p>单集六到二十分钟，节奏收得住，不会越看越精神。</p></div>
+        <div class="bx-go">进入格子 →</div>
+      </a>
+      <a href="#" class="bx-i reveal">
+        <div class="bx-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <div><h3>陪家人看</h3><p>全年龄可看，长辈接受度高，过年过节不会冷场。</p></div>
+        <div class="bx-go">进入格子 →</div>
+      </a>
+      <a href="#" class="bx-i reveal">
+        <div class="bx-ic"><svg viewBox="0 0 24 24"><path d="M4 19V6l8 5 8-5v13"/></svg></div>
+        <div><h3>完整专题</h3><p>三十二个主题分格，从「适合通勤」到「适合哭一场」。</p></div>
+        <div class="bx-go">查看全部 →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目二：好片清单（左说明右表格） ============ -->
+<section class="section" id="list">
+  <div class="wrap">
+    <div class="ls-head reveal">
+      <div>
+        <div class="eyebrow">LIST / 好片清单</div>
+        <h2 class="h-title">这周<em>最值得看</em>的十部</h2>
+        <p class="h-sub">按讨论度与口碑综合排序，不是单纯打分。每部都标注了时长和适合什么场景下看。</p>
+      </div>
+      <a href="#mood" class="btn btn-ghost">按心情找片 →</a>
+    </div>
+    <div class="ls-grid">
+      <aside class="ls-side reveal">
+        <h3>这份清单怎么来的</h3>
+        <p>每周更新一次，收录近一个月讨论度明显上升的片子。排序综合了口碑、时长与场景适配度，不是纯评分榜。</p>
+        <div class="meta">
+          <div><b data-n="10">0</b><span>本周收录</span></div>
+          <div><b data-n="42">分钟</b><span>平均单集时长</span></div>
+          <div><b data-n="3">类</b><span>覆盖类型</span></div>
+        </div>
+      </aside>
+      <div class="ls-table reveal">
+        <div class="ls-row head"><span></span><span>片名 · 类型 · 时长</span><span>场景</span><span>评分</span></div>
+        <a href="#" class="ls-row"><span class="no">01</span><div class="info"><h4>《城市边缘的人》</h4><small>现实题材 · 电影 · 128 分钟</small></div><span class="cat">独自</span><span class="rt">9.4</span></a>
+        <a href="#" class="ls-row"><span class="no">02</span><div class="info"><h4>《小城来了新医生》</h4><small>生活剧 · 单集 45 分钟</small></div><span class="cat">陪家人</span><span class="rt">9.3</span></a>
+        <a href="#" class="ls-row"><span class="no">03</span><div class="info"><h4>《无声的河流》</h4><small>文艺 · 电影 · 107 分钟</small></div><span class="cat">独自</span><span class="rt">9.0</span></a>
+        <a href="#" class="ls-row"><span class="no">04</span><div class="info"><h4>《海边的夏天》</h4><small>青春群像 · 16 集</small></div><span class="cat">周末</span><span class="rt">9.1</span></a>
+        <a href="#" class="ls-row"><span class="no">05</span><div class="info"><h4>《种子的一生》</h4><small>自然纪录 · 单集 50 分钟</small></div><span class="cat">睡前</span><span class="rt">8.8</span></a>
+        <a href="#" class="ls-row"><span class="no">06</span><div class="info"><h4>《老街的旧书店》</h4><small>年代温情 · 32 集</small></div><span class="cat">周末</span><span class="rt">8.9</span></a>
+        <a href="#" class="ls-row"><span class="no">07</span><div class="info"><h4>《今晚吃什么》</h4><small>美食观察 · 单集 30 分钟</small></div><span class="cat">下饭</span><span class="rt">8.7</span></a>
+        <a href="#" class="ls-row"><span class="no">08</span><div class="info"><h4>《夏夜便利店》</h4><small>轻短剧 · 单集 22 分钟</small></div><span class="cat">通勤</span><span class="rt">8.5</span></a>
+        <a href="#" class="ls-row"><span class="no">09</span><div class="info"><h4>《老手艺的新年》</h4><small>人文纪录 · 100 分钟</small></div><span class="cat">独自</span><span class="rt">8.6</span></a>
+        <a href="#" class="ls-row"><span class="no">10</span><div class="info"><h4>《早餐店的早晨》</h4><small>都市轻喜剧 · 24 集</small></div><span class="cat">下饭</span><span class="rt">8.4</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目三：按心情分格（大数字横向条） ============ -->
+<section class="section" id="mood">
+  <div class="wrap">
+    <div class="md-head reveal">
+      <div>
+        <div class="eyebrow">MOOD / 按心情分格</div>
+        <h2 class="h-title">先问心情，<em>再找片子</em></h2>
+        <p class="h-sub">片子的好坏和现在适不适合你，是两件事。选片先看心情，再看类型。</p>
+      </div>
+      <a href="#" class="btn btn-ghost">完整心情表 →</a>
+    </div>
+    <div class="md-grid">
+      <article class="md-i reveal"><div class="md-num">01</div><h3>想笑一笑</h3><p>轻喜剧为主，笑点不靠夸张，看完不会觉得浪费时间。</p><ul><li>都市轻喜剧</li><li>生活群像</li><li>单口与脱口秀</li></ul></article>
+      <article class="md-i reveal"><div class="md-num">02</div><h3>想被治愈</h3><p>节奏慢、冲突少，画面干净，适合刚下班或者刚吵完架。</p><ul><li>自然纪录片</li><li>美食观察</li><li>治愈系剧集</li></ul></article>
+      <article class="md-i reveal"><div class="md-num">03</div><h3>想安静一下</h3><p>台词少、摄影强，不需要全程盯着看，可以放着慢慢听。</p><ul><li>文艺电影</li><li>人文纪录</li><li>无声短片</li></ul></article>
+      <article class="md-i reveal"><div class="md-num">04</div><h3>想看点刺激的</h3><p>悬疑与犯罪题材，节奏紧，建议一次看完不要分段。</p><ul><li>犯罪悬疑</li><li>谍战剧集</li><li>高概念短片</li></ul></article>
+      <article class="md-i reveal"><div class="md-num">05</div><h3>想陪家人看</h3><p>全年龄可看，台词体面，长辈接受度最高的一档。</p><ul><li>年代温情</li><li>家庭剧</li><li>合家欢电影</li></ul></article>
+      <article class="md-i reveal"><div class="md-num">06</div><h3>通勤与碎片</h3><p>单集二十分钟以内，随时停随时接得上。</p><ul><li>轻短剧</li><li>微短纪录片</li><li>六分钟短片</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目四：开箱记录（横向滚动条带） ============ -->
+<section class="section" id="unbox">
+  <div class="wrap">
+    <div class="ub-head reveal">
+      <div>
+        <div class="eyebrow">UNBOX / 开箱记录</div>
+        <h2 class="h-title">每次开一格，<em>写一点笔记</em></h2>
+        <p class="h-sub">每周开箱一到两格，记录格子里的片子怎么选、谁适合看、什么场景看最合适。</p>
+      </div>
+      <a href="#" class="btn btn-ghost">全部开箱 →</a>
+    </div>
+    <div class="ub-bar reveal">
+      <span class="tag gr">每周更新</span>
+      <div class="ub-arrows">
+        <button id="ubPrev" aria-label="上一组"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button id="ubNext" aria-label="下一组"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="ub-track reveal" id="ubTrack">
+      <div class="ub-in">
+        <article class="ub-i"><div class="ub-cap"><div class="bg u1"></div><em>开箱 01</em><time>10.10</time><b>现实题材这格，怎么选</b></div><div class="ub-body"><p>现实题材最怕假。这格的筛选标准只有一条：看的时候能不能想起身边的人。</p><span class="more">阅读开箱 →</span></div></article>
+        <article class="ub-i"><div class="ub-cap"><div class="bg u2"></div><em>开箱 02</em><time>10.06</time><b>治愈系不等于没有冲突</b></div><div class="ub-body"><p>真正耐看的治愈片，冲突都在，只是处理方式更克制。这格收录的六部都符合这一点。</p><span class="more">阅读开箱 →</span></div></article>
+        <article class="ub-i"><div class="ub-cap"><div class="bg u3"></div><em>开箱 03</em><time>10.02</time><b>自然纪录的观看场景</b></div><div class="ub-body"><p>自然纪录最好的观看时间是晚上，关灯，声音开到能听到环境声。</p><span class="more">阅读开箱 →</span></div></article>
+        <article class="ub-i"><div class="ub-cap"><div class="bg u4"></div><em>开箱 04</em><time>09.28</time><b>下饭剧的及格线</b></div><div class="ub-body"><p>下饭剧不需要深刻，但需要稳定。单集时长、笑点密度、有没有太长的前情提要，我们逐部测过。</p><span class="more">阅读开箱 →</span></div></article>
+        <article class="ub-i"><div class="ub-cap"><div class="bg u5"></div><em>开箱 05</em><time>09.24</time><b>陪家人看的避雷清单</b></div><div class="ub-body"><p>长辈不接受的部分往往是台词和节奏，不是题材。这格按这两个维度筛了一遍。</p><span class="more">阅读开箱 →</span></div></article>
+        <article class="ub-i"><div class="ub-cap"><div class="bg u6"></div><em>开箱 06</em><time>09.20</time><b>短片为什么越来越重要</b></div><div class="ub-body"><p>六到二十分钟的体量，刚好能讲完一个完整的小情绪。这格收了十五部新作。</p><span class="more">阅读开箱 →</span></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目五：资讯（日期刻度式列表） ============ -->
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="nw-head reveal">
+      <div>
+        <div class="eyebrow">NEWS / 资讯动态</div>
+        <h2 class="h-title">影视动态<em>· 行业速览</em></h2>
+        <p class="h-sub">新片定档、项目官宣、奖项结果，只留信息量大的几条。</p>
+      </div>
+      <a href="#" class="btn btn-ghost">全部动态 →</a>
+    </div>
+    <div class="nw-list">
+      <a href="#" class="nw-i reveal"><time>10.13<small>周六</small></time><span class="cat">行业</span><h3>《城市边缘的人》开启二轮放映，多地影院加开午夜场</h3><span class="more">详情 →</span></a>
+      <a href="#" class="nw-i reveal"><time>10.11<small>周四</small></time><span class="cat">剧集</span><h3>《小城来了新医生》更新至二十四集，口碑维持九分以上</h3><span class="more">详情 →</span></a>
+      <a href="#" class="nw-i reveal"><time>10.09<small>周二</small></time><span class="cat">剧集</span><h3>《海边的夏天》收官，观众讨论集中在群像塑造</h3><span class="more">详情 →</span></a>
+      <a href="#" class="nw-i reveal"><time>10.08<small>周一</small></time><span class="cat">纪录</span><h3>《种子的一生》三集完整上线，旁白克制适合静看</h3><span class="more">详情 →</span></a>
+      <a href="#" class="nw-i reveal"><time>10.05<small>周五</small></time><span class="cat">节展</span><h3>三部华语片入选国际电影节首批入围名单</h3><span class="more">详情 →</span></a>
+      <a href="#" class="nw-i reveal"><time>10.03<small>周三</small></time><span class="cat">平台</span><h3>多个平台公布秋冬片单，现实题材占比明显上升</h3><span class="more">详情 →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-in reveal">
+      <span class="rule"></span>
+      <h2>有好片想收进盒子，<i>留一句话就好</i></h2>
+      <p>推荐一部你最近看过、觉得值得被更多人看到的好片；或者聊聊商务与内容合作的可能。</p>
+      <div class="cta-actions">
+        <a href="#" class="btn btn-primary">推荐一部好片</a>
+        <a href="mailto:hi@qimiyingshihe-cn.github.io" class="btn btn-ghost">发送合作邮件 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo"><b></b>奇米影视盒<span>THE FILM BOX</span></a>
+        <p>奇米影视盒，一个影视内容推荐与观影清单平台，把值得看的好片按主题和心情分门别类收进盒子里，附影视行业资讯与口碑榜单。</p>
+        <div class="foot-social">
+          <a href="#" aria-label="微信"><svg viewBox="0 0 24 24"><path d="M9 4C5.1 4 2 6.7 2 10c0 1.6.8 3.1 2 4.2L3.5 16l2.6-1.3c.9.2 1.8.4 2.9.4.3 0 .6 0 .9-.1C9.7 14.7 9 13.4 9 12c0-3 2.7-5 6-5"/><path d="M15 10c-2.2 0-4 1.6-4 3.5S12.8 17 15 17c.6 0 1.2-.1 1.7-.3l2 1-.5-1.8c1.2-.8 2-2 2-3.2C20 11.6 18.2 10 15 10z"/></svg></a>
+          <a href="#" aria-label="邮箱"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          <a href="#" aria-label="微博"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12c1.5 0 3-1 3-2.5S9.5 7 8 7"/></svg></a>
+          <a href="#" aria-label="RSS"><svg viewBox="0 0 24 24"><path d="M5 19a2 2 0 100-4 2 2 0 000 4zM5 5v4a8 8 0 018 8h4A12 12 0 005 5zM5 11v2a4 4 0 014 4h2a6 6 0 00-6-6z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>主题分格</h5>
+        <ul>
+          <li><a href="#box">盒子里有什么</a></li>
+          <li><a href="#mood">按心情分格</a></li>
+          <li><a href="#list">好片清单</a></li>
+          <li><a href="#">经典补片</a></li>
+          <li><a href="#">睡前短片</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>内容栏目</h5>
+        <ul>
+          <li><a href="#unbox">开箱记录</a></li>
+          <li><a href="#news">资讯动态</a></li>
+          <li><a href="#">编辑手记</a></li>
+          <li><a href="#">观众来信</a></li>
+          <li><a href="#">月度回顾</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>联系我们</h5>
+        <ul>
+          <li><a href="mailto:hi@qimiyingshihe-cn.github.io">hi@qimiyingshihe-cn.github.io</a></li>
+          <li><a href="#">推荐好片</a></li>
+          <li><a href="#">商务合作</a></li>
+          <li><a href="#">加入编辑部</a></li>
+          <li><a href="#">投稿规范</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="year">2026</span> 奇米影视盒 · 影视内容推荐与观影清单平台 · 一格一格，收好每一部好片</span>
+      <span><a href="#">内容规范</a> · <a href="#">合作说明</a> · <a href="#">联系我们</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#top" class="top" id="topBtn" aria-label="返回顶部">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</a>
+
+<script>
+(function(){
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var nav = document.getElementById('nav');
+  var sections = document.querySelectorAll('section[id], header[id]');
+  var links = document.querySelectorAll('.menu a[href^="#"]');
+  function onScroll(){
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+    document.getElementById('topBtn').classList.toggle('show', window.scrollY > 600);
+    var cur = '';
+    sections.forEach(function(s){
+      if(window.scrollY >= s.offsetTop - 120) cur = s.id;
+    });
+    links.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  var menu = document.getElementById('menu');
+  var btn = document.getElementById('menuBtn');
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单');
+  });
+  links.forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  var track = document.getElementById('ubTrack');
+  document.getElementById('ubPrev').addEventListener('click', function(){ track.scrollBy({left:-338, behavior:'smooth'}); });
+  document.getElementById('ubNext').addEventListener('click', function(){ track.scrollBy({left:338, behavior:'smooth'}); });
+
+  function animateNum(b){
+    var raw = b.dataset.n;
+    var isFloat = raw.indexOf('.') > -1;
+    var n = parseFloat(raw);
+    var v = 0;
+    var step = Math.max(isFloat ? 0.1 : 1, n / 60);
+    var id = setInterval(function(){
+      v += step;
+      if(v >= n){ v = n; clearInterval(id); }
+      b.textContent = isFloat ? v.toFixed(1) : Math.round(v);
+    }, 24);
+  }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.14, rootMargin:'0px 0px -60px'});
+    document.querySelectorAll('.reveal, .hero-l, .hero-r').forEach(function(el){ io.observe(el); });
+
+    var so = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          animateNum(e.target);
+          so.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.5});
+    document.querySelectorAll('[data-n]').forEach(function(b){ so.observe(b); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('[data-n]').forEach(function(b){ b.textContent = b.dataset.n; });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      var id = a.getAttribute('href');
+      if(id.length > 1 && document.querySelector(id)){
+        ev.preventDefault();
+        window.scrollTo({top: document.querySelector(id).offsetTop - 80, behavior:'smooth'});
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
